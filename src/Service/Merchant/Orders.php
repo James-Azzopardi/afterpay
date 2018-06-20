@@ -56,6 +56,7 @@ class Orders
                     'headers' => [
                         'Accept' => 'application/json',
                         'Content-Type' => 'application/json',
+                        'User-Agent' => $this->getAuthorization()->getUserAgent(),
                     ],
                     'body' => $this->getSerializer()->serialize($order, 'json'),
                 ]
@@ -112,3 +113,4 @@ class Orders
         );
     }
 }
+

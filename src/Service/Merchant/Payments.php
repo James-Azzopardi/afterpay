@@ -109,6 +109,7 @@ class Payments
                     'headers' => [
                         'Accept' => 'application/json',
                         'Content-Type' => 'application/json',
+                        'User-Agent' => $this->getAuthorization()->getUserAgent(),
                     ],
                     'body' => $requestBody,
                 ]
@@ -226,6 +227,7 @@ class Payments
                     'headers' => [
                         'Accept' => 'application/json',
                         'Content-Type' => 'application/json',
+                        'User-Agent' => $this->getAuthorization()->getUserAgent(),
                     ],
                     'body' => $this->getSerializer()->serialize($request, 'json'),
                 ]
@@ -309,6 +311,7 @@ class Payments
                     'headers' => [
                         'Accept' => 'application/json',
                         'Content-Type' => 'application/json',
+                        'User-Agent' => $this->getAuthorization()->getUserAgent(),
                     ],
                     'body' => $this->getSerializer()->serialize($request, 'json'),
                 ]
@@ -331,3 +334,4 @@ class Payments
         );
     }
 }
+
